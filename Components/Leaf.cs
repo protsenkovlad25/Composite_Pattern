@@ -8,6 +8,8 @@ namespace Car_Composite.Components
 {
     class Leaf : Component
     {
+        public bool component = false;
+
         public Leaf(int quantity, int weight) 
             : base(quantity, weight)
         {
@@ -15,10 +17,10 @@ namespace Car_Composite.Components
 
         public override Total Info(Total result, int quantity)
         {
-            Console.WriteLine($"    {Name} ({Quantity}, {Weight})");
+            Console.WriteLine($"    {Name} (Q-{Quantity}, W-{Weight})");
 
             result.TotalQuantity += (Quantity * quantity);
-            result.TotalWeight += Weight;
+            result.TotalWeight += (Weight * Quantity * quantity);
 
             return result;
         }
