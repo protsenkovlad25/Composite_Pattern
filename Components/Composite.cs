@@ -20,8 +20,9 @@ namespace Car_Composite.Components
             foreach (Component component in this.Components)
             {
                 result = component.Info(result, Quantity);
-                Weight += component.Weight;
+                Weight += (component.Weight * component.Quantity * Quantity);
             }
+            Weight -= 1;
 
             Console.WriteLine($"{Name} (W-{Weight})");
 
