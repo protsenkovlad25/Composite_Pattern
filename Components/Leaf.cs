@@ -21,6 +21,7 @@ namespace Car_Composite.Components
 
             result.TotalQuantity += (Quantity * quantity);
             result.TotalWeight += (Weight * Quantity * quantity);
+            result.WeightUnit += (Weight * Quantity * quantity);
 
             return result;
         }

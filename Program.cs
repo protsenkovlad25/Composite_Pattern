@@ -12,7 +12,7 @@ namespace Car_Composite
             Total result = new Total();
             result = car.Info(result, car.Quantity);
 
-            Console.WriteLine("Общее кол-во деталей: " + result.TotalQuantity);
+            Console.WriteLine("Общее кол-во деталей: " + (result.TotalQuantity - 1));
             Console.WriteLine("Общий вес Автомобиля: " + result.TotalWeight);
         }
     }

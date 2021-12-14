@@ -6,6 +6,7 @@ namespace Car_Composite.Components
     class Composite : Component
     {
         public bool component = true;
+        public int weight = 0;
 
         public List<Component> Components { get; set; } = new List<Component>();
 
@@ -16,12 +17,13 @@ namespace Car_Composite.Components
 
         public override Total Info(Total result, int quantity)
         {
-            Console.WriteLine($"{Name}");
-            
             foreach (Component component in this.Components)
             {
                 result = component.Info(result, Quantity);
+                Weight += component.Weight;
             }
+
+            Console.WriteLine($"{Name} (W-{Weight})");
 
             result.TotalQuantity += Quantity;
 
